@@ -8,7 +8,7 @@
   max-width: 768px;
   margin: 0 auto;
 }
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
   .content {
     max-width: 1000px;
   }
@@ -17,6 +17,11 @@
 .container {
   margin: 0 auto;
   padding: 20px;
+}
+@media (min-width: 1024px) {
+  .container {
+    margin: 1rem 6rem auto 6rem;
+  }
 }
 
 .btn {
@@ -87,7 +92,6 @@ body {
   align-items: center;
   animation: disappear 100ms forwards;
   animation-delay: 3s;
-  animation-fill-mode: forwads;
   background-color: #ffffff;
   inset: 0;
   z-index: 1;
@@ -131,8 +135,8 @@ header a {
   color: #000;
 }
 header.logoentete {
-  width: 130;
-  height: 34;
+  width: 130px;
+  height: 34px;
   fill: none;
   font-size: 30px;
   line-height: 44px;
@@ -161,8 +165,6 @@ footer {
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
-  margin-bottom: 2px;
-  margin-left: 2px;
 }
 
 i {
@@ -172,8 +174,7 @@ i {
 footer a {
   color: #FFF;
   text-decoration: none;
-  width: fit-content;
-  margin: 2px auto;
+  margin: 5px auto auto 20px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -240,7 +241,8 @@ footer a {
 @media (min-width: 1024px) {
   .listedefonctionnement {
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    column-gap: 2rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
     flex-direction: row;
   }
 }
@@ -300,7 +302,8 @@ footer a {
 @media (min-width: 1024px) {
   .restaurants-container {
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 0.5fr));
-    column-gap: 2rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 }
 
@@ -320,7 +323,8 @@ footer a {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .restaurants-carte a {
@@ -357,6 +361,4 @@ footer a {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

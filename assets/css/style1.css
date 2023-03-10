@@ -8,7 +8,7 @@
   max-width: 768px;
   margin: 0 auto;
 }
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
   .content {
     max-width: 1000px;
   }
@@ -17,6 +17,11 @@
 .container {
   margin: 0 auto;
   padding: 20px;
+}
+@media (min-width: 1024px) {
+  .container {
+    margin: 1rem 6rem auto 6rem;
+  }
 }
 
 .btn {
@@ -87,7 +92,6 @@ body {
   align-items: center;
   animation: disappear 100ms forwards;
   animation-delay: 3s;
-  animation-fill-mode: forwads;
   background-color: #ffffff;
   inset: 0;
   z-index: 1;
@@ -131,8 +135,8 @@ header a {
   color: #000;
 }
 header.logoentete {
-  width: 130;
-  height: 34;
+  width: 130px;
+  height: 34px;
   fill: none;
   font-size: 30px;
   line-height: 44px;
@@ -161,8 +165,6 @@ footer {
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
-  margin-bottom: 2px;
-  margin-left: 2px;
 }
 
 i {
@@ -172,8 +174,7 @@ i {
 footer a {
   color: #FFF;
   text-decoration: none;
-  width: fit-content;
-  margin: 2px auto;
+  margin: 5px auto auto 20px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -195,7 +196,8 @@ footer a {
 .menu img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: flex;
   margin: 0 auto;
 }
@@ -215,8 +217,8 @@ footer a {
 }
 .menu-resto {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: baseline;
+  justify-content: center;
 }
 @media (min-width: 1024px) {
   .menu-resto {
@@ -240,11 +242,25 @@ footer a {
     padding-left: 42px;
   }
 }
+@media (min-width: 1024px) {
+  .menu-categorie {
+    padding: 1rem 7rem;
+  }
+}
+.menu-categorie h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #000000;
+}
 .menu-carte {
   animation-fill-mode: both;
   background-color: #fff;
   border-radius: 20px;
-  padding: 1px 20px 0 10px;
+  padding: 0px 1px 0px 10px;
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
@@ -252,65 +268,62 @@ footer a {
   width: 100%;
   box-shadow: -1px 6px 10px 2px rgba(166, 166, 166, 0.34);
 }
+@media (min-width: 1024px) {
+  .menu-carte :hover .menu-carte_valide {
+    right: 0px;
+    transition: 0.7s ease-in-out;
+    transform: translateX(0px);
+    transition: 0.5s ease-in-out;
+  }
+}
 .menu-carte_content {
   width: 100%;
   transition: 0.8s ease-in-out;
+  cursor: pointer;
+}
+.menu-carte_content:active {
+  width: 75%;
 }
 .menu-carte_content:active .menu-carte_valide {
   right: 0px;
   transition: 0.7s ease-in-out;
-  z-index: 2;
   transform: translateX(0px);
   transition: 0.5s ease-in-out;
 }
+@media (min-width: 1024px) {
+  .menu-carte_content:hover {
+    width: 75%;
+  }
+}
 .menu-carte_title {
-  font-weight: 400;
-  overflow: hidden;
-  height: 40px;
-  width: 270px;
-  height: 44px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  height: 30px;
 }
 .menu-carte_title > h3 {
-  width: 270px;
-  height: 44px;
+  width: 100%;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
   color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-carte_text {
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
   height: 40px;
-}
-.menu-carte_text :hover {
-  width: calc(100% - 65px);
-  transition: width 0.5s ease-in-out;
 }
 .menu-carte_text p {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.menu-carte_text > p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -326,14 +339,9 @@ footer a {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 0.5rem;
+  padding-left: 1.5rem;
 }
-.menu-carte_text > b:active {
-  right: 0px;
-  transition: 0.7s ease-in-out;
-  z-index: 2;
-}
-.menu-carte_valide {
+.menu-carte_text .menu-carte_valide {
   position: absolute;
   text-align: center;
   right: -100px;
@@ -347,35 +355,15 @@ footer a {
   justify-content: center;
   transition: 0.7s ease-in-out;
 }
-.menu-carte_valide i {
+.menu-carte_text .menu-carte_valide > i {
   color: #fff;
   font-size: 1.5em;
+  z-index: 1;
+  padding-right: 12px;
 }
 .menu_title--underline {
   padding: 3px;
   background-color: rgb(153, 226, 208);
   margin-bottom: 10px;
   width: 40px;
-}
-@media (min-width: 1024px) {
-  .menu-categorie {
-    padding: 0rem 10rem 2rem;
-  }
-}
-.menu-categorie > h2 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: uppercase;
-  color: #000000;
-}
-
-@media (min-width: 1024px) {
-  .content {
-    max-width: 1000px;
-  }
-}
-
-/*# sourceMappingURL=style1.css.map */
+}/*# sourceMappingURL=style1.css.map */
