@@ -18,11 +18,6 @@
   margin: 0 auto;
   padding: 20px;
 }
-@media (min-width: 1024px) {
-  .container {
-    margin: 1rem 6rem auto 6rem;
-  }
-}
 
 .btn {
   border-radius: 50px;
@@ -179,14 +174,19 @@ footer a {
 
 @media screen and (min-width: 1024px) {
   footer {
-    flex-direction: row-reverse;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
-    padding: 40px;
+    padding: 3% 18%;
+    height: 120px;
+  }
+  footer a {
+    margin-left: 20px;
   }
   .logofooter {
     margin: 0 auto;
     padding-left: 10rem;
+    margin: 1rem 0rem;
   }
 }
 .menu {
@@ -196,8 +196,7 @@ footer a {
 .menu img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: flex;
   margin: 0 auto;
 }
@@ -242,9 +241,21 @@ footer a {
     padding-left: 42px;
   }
 }
+.menu-categorie :nth-child(2) {
+  animation-delay: 2s;
+}
+.menu-categorie :nth-child(3) {
+  animation-delay: 3s;
+}
+.menu-categorie :nth-child(4) {
+  animation-delay: 4s;
+}
+.menu-categorie :nth-child(5) {
+  animation-delay: 5s;
+}
 @media (min-width: 1024px) {
   .menu-categorie {
-    padding: 1rem 7rem;
+    padding: 1rem 9rem;
   }
 }
 .menu-categorie h2 {
@@ -257,7 +268,7 @@ footer a {
   color: #000000;
 }
 .menu-carte {
-  animation-fill-mode: both;
+  animation: fadeIn 4s ease-in both;
   background-color: #fff;
   border-radius: 20px;
   padding: 0px 1px 0px 10px;
@@ -267,6 +278,16 @@ footer a {
   z-index: 0;
   width: 100%;
   box-shadow: -1px 6px 10px 2px rgba(166, 166, 166, 0.34);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
 }
 @media (min-width: 1024px) {
   .menu-carte :hover .menu-carte_valide {
@@ -366,4 +387,6 @@ footer a {
   background-color: rgb(153, 226, 208);
   margin-bottom: 10px;
   width: 40px;
-}/*# sourceMappingURL=style1.css.map */
+}
+
+/*# sourceMappingURL=style1.css.map */
